@@ -1,0 +1,7 @@
+<svg width="200" height="50" viewBox="0 0 200 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- 9t7 Racing Simulator Logo -->
+  <rect width="200" height="50" rx="8" fill="#1a1a1a"/>
+  <text x="20" y="32" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#ffffff">9t7 Racing</text>
+  <circle cx="160" cy="25" r="8" fill="#ff6b35"/>
+  <path d="M152 25 L168 25 M160 17 L160 33" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+</svg>
