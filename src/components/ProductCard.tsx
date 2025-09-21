@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 import { Star, ShoppingCart, Eye, Heart } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 interface ProductCardProps {
   id: string;
@@ -30,8 +31,13 @@ const ProductCard = ({
   isBestseller,
   isOnSale,
 }: ProductCardProps) => {
+  const navigate = useNavigate();
   const formatPrice = (price: number) => `$${price.toFixed(2)}`;
   const discountPercentage = originalPrice ? Math.round(((originalPrice - price) / originalPrice) * 100) : 0;
+
+  const handleQuickView = () => {
+    navigate(`/product/${id}`);
+  };
 
   return (
     <Card className="group relative overflow-hidden bg-card border-border hover:border-primary/30 transition-all duration-300 transform hover:-translate-y-2 hover:glow-subtle">
@@ -74,7 +80,7 @@ const ProductCard = ({
           
           {/* Overlay on Hover */}
           <div className="absolute inset-0 bg-background/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-2">
-            <Button variant="neon" size="sm">
+            <Button variant="neon" size="sm" onClick={handleQuickView}>
               <Eye className="mr-2 h-4 w-4" />
               Quick View
             </Button>
